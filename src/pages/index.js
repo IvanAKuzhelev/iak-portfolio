@@ -1,6 +1,7 @@
 import * as React from "react";
 import Hero from "../components/Hero";
 import { Global, css } from "@emotion/react";
+import Header from "../components/Header";
 
 const IndexPage = () => {
   return (
@@ -15,14 +16,15 @@ const IndexPage = () => {
           html,
           body {
             margin: 0;
+            background-color: #011627;
+            color: white;
           }
-
-          /* remove margin for the main div that Gatsby mounts into */
-          > div {
-            margin-top: 0;
+          nav > ul {
+            list-style: none;
           }
         `}
       />
+      <Header />
       <Hero />
     </>
   );

@@ -6,7 +6,7 @@ const Hero = () => {
     <>
       <main
         css={css`
-          height: 100vh;
+          height: 90vh;
           width: 100vw;
           background-color: #011627;
           /* background-color: #44475a; */
