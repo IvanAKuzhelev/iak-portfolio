@@ -1,6 +1,7 @@
 import * as React from "react";
 import { css } from "@emotion/react";
 import TechVisuals from "./TechVisuals";
+
 const Hero = () => {
   return (
     <>
@@ -9,9 +10,15 @@ const Hero = () => {
           height: 90vh;
           width: 100vw;
           background-color: #011627;
-          /* background-color: #44475a; */
           display: grid;
           grid-template-columns: 1fr 1fr;
+          background: rgb(1, 22, 39);
+          background: linear-gradient(
+            288deg,
+            rgba(1, 22, 39, 1) 47%,
+            rgba(246, 246, 246, 0.05) 49%,
+            rgba(1, 22, 39, 1) 51%
+          );
         `}
       >
         <TechVisuals />
