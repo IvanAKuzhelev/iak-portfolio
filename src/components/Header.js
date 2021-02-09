@@ -18,25 +18,21 @@ const Header = () => {
   const NavLink = styled(Link)`
     text-decoration: none;
     color: white;
-    &::after {
-      /* content: "";
-      width: 0%;
-      height: 1px;
-      display: block;
-      background: white; */
-      /* transition: 300ms; */
-    }
   `;
   return (
     <header
       css={css`
-        display: flex;
         justify-content: space-between;
         align-items: center;
         background-color: transparent;
-        height: 10vh;
-        padding: 0 5vw;
+        height: 5vh;
+        padding: 3vh 5vw 0;
         font-size: 1.2rem;
+        position: absolute;
+        z-index: 1;
+        width: 100vw;
+
+        display: flex;
       `}
     >
       <p

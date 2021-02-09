@@ -1,0 +1,3 @@
+- Chemist turned WebDev. A closer jump than it might seem.
+- Building your first web dev portfolio. Some newbie gotchas.
+- Three.js and React hooks. A bit deeper than on the surface look.

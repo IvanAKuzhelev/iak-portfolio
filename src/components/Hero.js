@@ -7,10 +7,11 @@ const Hero = () => {
     <>
       <main
         css={css`
-          height: 90vh;
+          height: 100vh;
           width: 100vw;
           background-color: #011627;
           display: grid;
+          padding-top: 10vh;
           grid-template-columns: 1fr 1fr;
           background: rgb(1, 22, 39);
           background: linear-gradient(
