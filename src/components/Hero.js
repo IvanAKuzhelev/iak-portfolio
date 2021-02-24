@@ -15,7 +15,7 @@ const Hero = () => {
           grid-template-columns: 1fr 1fr;
           background: rgb(1, 22, 39);
           background: linear-gradient(
-            288deg,
+            280deg,
             rgba(1, 22, 39, 1) 47%,
             rgba(246, 246, 246, 0.05) 49%,
             rgba(1, 22, 39, 1) 51%
