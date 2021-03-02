@@ -31,6 +31,7 @@ const Header = () => {
         position: absolute;
         z-index: 1;
         width: 100vw;
+        max-width: 100%;
 
         display: flex;
       `}

@@ -1,14 +1,16 @@
 import * as React from "react";
 import { css } from "@emotion/react";
 import TechVisuals from "./TechVisuals";
+import ScrollCTA from "./ScrollCTA";
 
-const Hero = () => {
+const Hero = ({ scrollTarget }) => {
   return (
     <>
       <main
         css={css`
           height: 100vh;
           width: 100vw;
+          max-width: 100%;
           background-color: #011627;
           display: grid;
           padding-top: 10vh;
@@ -44,6 +46,7 @@ const Hero = () => {
             <br /> needs
           </h1>
         </section>
+        <ScrollCTA scrollTarget={scrollTarget} message="See my projects" />
       </main>
     </>
   );

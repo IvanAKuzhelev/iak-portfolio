@@ -24,6 +24,8 @@ const TechVisuals = () => {
         background-color: transparent;
         padding: 2rem;
         display: grid;
+        max-width: 100%;
+
         grid-template-columns: 30vh auto auto;
         grid-template-rows: 14.5vh 14.5vh auto;
         grid-gap: 1vh;
