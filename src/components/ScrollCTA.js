@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useRef } from "react";
 import { css, keyframes } from "@emotion/react";
 
 import arrow from "../images/arrow.svg";
@@ -26,17 +27,23 @@ const ScrollCTA = (props) => {
         ${(100 * 0.96) / period}%  { transform:  translateY(0); }
         //delay between animations
         100% { transform: translateY(0); }`;
+  const btn = useRef(null);
   return (
     <button
-      onClick={() =>
-        scrollTarget.current.scrollIntoView({ behavior: "smooth" })
-      }
+      ref={btn}
+      onClick={() => {
+        scrollTarget.current.scrollIntoView({ behavior: "smooth" });
+        btn.current.blur();
+      }}
       css={css`
         all: unset;
         -webkit-text-fill-color: inherit;
         background-color: transparent;
         font-size: ${size * 1.2}rem;
         ${extStyles}
+        &:focus {
+          outline: white solid 3px;
+        }
         &::after {
           content: "";
           display: block;
