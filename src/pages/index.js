@@ -3,8 +3,8 @@ import { useRef } from "react";
 import Hero from "../components/Hero";
 import { Global, css } from "@emotion/react";
 import Header from "../components/Header";
-import scrlArrowUp from "../images/eject-white-18dp.svg";
-import scrlArrowDown from "../images/eject-white-18dp.svg";
+import scrlArrowUp from "../images/upScrl.svg";
+import scrlArrowDown from "../images/downScrl.svg";
 
 const IndexPage = () => {
   const scrollTarget = useRef(null);
