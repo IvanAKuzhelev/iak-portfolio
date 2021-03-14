@@ -4,6 +4,7 @@ import { css } from "@emotion/react";
 import Theme from "./Theme";
 import ProjectsData from "./ProjectsData";
 import GatsbyIcon from "../images/dev-icons/gatsby.svg";
+import ProjectCard from "./ProjectCard";
 
 const Projects = ({ scrollTarget }) => {
   const [displayRequest, setDisplayRequest] = useState("featured");
@@ -17,8 +18,8 @@ const Projects = ({ scrollTarget }) => {
         flex-direction: column;
         background-color: ${Theme.bg};
         width: 100vw;
-        height: 100vh;
         max-width: 100%;
+        height: 100vh;
       `}
     >
       <div
@@ -30,7 +31,7 @@ const Projects = ({ scrollTarget }) => {
       ></div>
       {ProjectsData.flatMap((project) =>
         project.sortLabels.includes(displayRequest)
-          ? [<p key={project.name}>{project.name}</p>]
+          ? [<ProjectCard project={project} key={project.name} />]
           : []
       )}
     </section>
