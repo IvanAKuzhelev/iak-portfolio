@@ -12,10 +12,13 @@ const Projects = ({ scrollTarget }) => {
     <section
       ref={scrollTarget}
       css={css`
-        display: flex;
+        /* display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        flex-direction: column;
+        flex-direction: column; */
+        display: grid;
+        row-gap: 5vh;
+        grid-template-columns: 10% 1fr;
         background-color: ${Theme.bg};
         width: 100vw;
         max-width: 100%;
@@ -26,7 +29,6 @@ const Projects = ({ scrollTarget }) => {
         css={css`
           background-color: white;
           height: 100%;
-          width: 10%;
         `}
       ></div>
       {ProjectsData.flatMap((project) =>

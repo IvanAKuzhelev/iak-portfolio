@@ -9,15 +9,16 @@ import GitIcon from "../images/dev-icons/git.svg";
 
 const MinorTechVisuals = () => {
   const FlexedIcon = styled.img`
-    margin-right: 2vw;
+    margin-right: 1vh;
     height: 14.5vh;
-    padding-top: 2vh;
   `;
   return (
+    //Flexboxed for future-proofing for the ease of adding new icons including the non-squared ones
     <div
       css={css`
         display: flex;
         flex-wrap: wrap;
+        margin-top: 2vh;
         grid-row: 3/4;
         grid-column: 1/4;
       `}
