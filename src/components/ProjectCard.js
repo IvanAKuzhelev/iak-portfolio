@@ -62,7 +62,7 @@ const ProjectCard = ({ project }) => {
             `}
           >
             {stack.map((stackItem) => (
-              <li key={stackItem}>{stackItem}</li>
+              <li key={stackItem.text}>{stackItem.text}</li>
             ))}
           </ul>
         );
@@ -80,7 +80,7 @@ const ProjectCard = ({ project }) => {
           height: 30vh;
           min-height: 200px;
           border-radius: 8px;
-          color: black;
+          color: ${Theme.bg};
           display: grid;
           grid-template-columns: 20% 1fr 5%;
           grid-template-rows: 1fr 1fr 1fr;

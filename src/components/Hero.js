@@ -61,7 +61,6 @@ const Hero = ({ scrollTarget }) => {
         <h1
           css={css`
             font-size: 4rem;
-            color: white;
             text-align: center;
             grid-column: -2/-1;
             grid-row: 1/-1;

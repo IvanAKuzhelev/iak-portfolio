@@ -12,10 +12,6 @@ const Projects = ({ scrollTarget }) => {
     <section
       ref={scrollTarget}
       css={css`
-        /* display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        flex-direction: column; */
         display: grid;
         row-gap: 5vh;
         grid-template-columns: 10% 1fr;

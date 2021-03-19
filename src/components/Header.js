@@ -2,22 +2,23 @@ import * as React from "react";
 import { Link } from "gatsby";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+import Theme from "./Theme";
 const Header = () => {
   const NavItem = styled.li`
     margin-left: 3vw;
-    background: linear-gradient(white, white) center bottom;
+    // Underline on hover
+    background: linear-gradient(${Theme.white}, ${Theme.white}) center bottom;
     padding-bottom: 6px;
     background-size: 0% 2px;
     background-repeat: no-repeat;
     transition: all 0.35s;
     &:hover {
-      /* width: 100%; */
       background-size: 100% 2px;
     }
   `;
   const NavLink = styled(Link)`
     text-decoration: none;
-    color: white;
+    color: ${Theme.white};
   `;
   return (
     <header

@@ -1,7 +1,8 @@
 import * as React from "react";
 import { useRef } from "react";
-import Hero from "../components/Hero";
 import { Global, css } from "@emotion/react";
+import "@fontsource/fira-code";
+import Hero from "../components/Hero";
 import Theme from "../components/Theme";
 import Header from "../components/Header";
 import scrlArrowUp from "../images/upScrl.svg";
@@ -23,7 +24,9 @@ const IndexPage = () => {
           body {
             margin: 0;
             background-color: #011627;
-            color: white;
+            color: ${Theme.white};
+            font-family: "Fira Code";
+            // firefox scrollbar - upcoming standart
             scrollbar-color: #d6deeb #01111d;
           }
           nav > ul {
