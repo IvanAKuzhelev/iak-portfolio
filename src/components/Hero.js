@@ -1,14 +1,21 @@
 import * as React from "react";
 import { css } from "@emotion/react";
-
+import styled from "@emotion/styled";
 import ScrollCTA from "./ScrollCTA";
 import JSIcon from "../images/dev-icons/javascript.svg";
 import TSIcon from "../images/dev-icons/typescript.svg";
 import ReactIcon from "../images/dev-icons/react.svg";
-
-import MinorTechVisuals from "./MinorTechVisuals";
+import GatsbyIcon from "../images/dev-icons/gatsby.svg";
+import NodeIcon from "../images/dev-icons/nodejs.svg";
+import ExpressIcon from "../images/dev-icons/express.svg";
+import GitIcon from "../images/dev-icons/git.svg";
 
 const Hero = ({ scrollTarget }) => {
+  const MinorIcon = styled.img`
+    height: 14.5vh;
+    ${(props) =>
+      props.hardPlacement ? `grid-area: ${props.hardPlacement};` : ""}
+  `;
   return (
     <>
       <main
@@ -19,9 +26,10 @@ const Hero = ({ scrollTarget }) => {
           background-color: #011627;
           display: grid;
           padding: 10.5vh 3vw 0;
-          grid-template-columns: 30vh auto 1fr 50%;
-          grid-template-rows: 14.5vh 14.5vh auto 1fr;
+          grid-template-columns: 14.5vh 14.5vh auto auto 1fr 50%;
+          grid-template-rows: 14.5vh 14.5vh auto auto 1fr;
           grid-gap: 1vh;
+          place-items: center center;
           background: rgb(1, 22, 39);
           background: linear-gradient(
             280deg,
@@ -33,31 +41,33 @@ const Hero = ({ scrollTarget }) => {
       >
         <img
           src={JSIcon}
-          alt="ES6 and beyond"
+          alt="JS"
           title="ES6 and beyond"
           css={css`
             height: 30vh;
-            grid-row: 1/3;
+            grid-area: 1/1/3/3;
           `}
         />
-        <img
-          src={TSIcon}
-          alt="TypeScript"
-          title="TypeScript"
-          css={css`
-            height: 14.5vh;
-          `}
-        />
-        <img
+        <MinorIcon src={TSIcon} alt="TypeScript" title="TypeScript" />
+        <MinorIcon
           src={ReactIcon}
           alt="React"
           title="React"
           css={css`
-            height: 14.5vh;
-            grid-row: 2/3;
+            grid-row-start: 2;
           `}
         />
-        <MinorTechVisuals />
+        <MinorIcon
+          src={GatsbyIcon}
+          alt="Gatsby"
+          title="Gatsby"
+          css={css`
+            grid-column-start: 1;
+          `}
+        />
+        <MinorIcon src={NodeIcon} alt="Node.js" title="Node.js" />
+        <MinorIcon src={ExpressIcon} alt="Express" title="Express" />
+        <MinorIcon src={GitIcon} alt="Git" title="Git" />
         <h1
           css={css`
             font-size: 4rem;

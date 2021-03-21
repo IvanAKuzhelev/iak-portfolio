@@ -4,8 +4,23 @@ const STACK = {
     text: "Gatsby JS",
     url: "https://www.gatsbyjs.com/",
   },
+  emotion: {
+    text: "Emotion JS",
+    url: "https://emotion.sh/docs/introduction",
+  },
+  netlifyForms: {
+    text: "Netlify forms",
+    url: "https://www.netlify.com/products/forms/",
+  },
 };
-const ProjectsData = [
+const SORT_LABELS = {
+  featured: "featured",
+  react: "react",
+  threeD: "threeD",
+  node: "node",
+  vanilla: "vanilla",
+};
+const PROJECTS_DATA = [
   {
     name: "this Portfolio",
     description:
@@ -13,7 +28,7 @@ const ProjectsData = [
     features: ["SSG", "dynamic slug", "Netlify forms", "flex & grid"],
     stack: [STACK.gatsby, "Emotion JS", "Netlify functions"],
     img: { src: GatsbyIcon, alt: "alt", title: "title" },
-    sortLabels: ["react", "featured"],
+    sortLabels: [SORT_LABELS.featured, SORT_LABELS.react],
   },
   {
     name: "Box Server",
@@ -22,7 +37,7 @@ const ProjectsData = [
     features: [],
     stack: ["Gatsby JS", "Emotion JS", "Netlify functions"],
     img: { src: GatsbyIcon, alt: "alt", title: "title" },
-    sortLabels: ["react", "featured", "3d"],
+    sortLabels: [SORT_LABELS.featured, SORT_LABELS.react, SORT_LABELS.threeD],
   },
   {
     name: "Calc",
@@ -31,7 +46,7 @@ const ProjectsData = [
     features: [],
     stack: ["Gatsby JS", "Emotion JS", "Netlify functions"],
     img: { src: GatsbyIcon, alt: "alt", title: "title" },
-    sortLabels: ["featured", "vanilla"],
+    sortLabels: [SORT_LABELS.featured, SORT_LABELS.vanilla],
   },
   {
     name: "",
@@ -42,4 +57,5 @@ const ProjectsData = [
     sortLabels: [],
   },
 ];
-export default ProjectsData;
+export { SORT_LABELS };
+export default PROJECTS_DATA;

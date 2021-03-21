@@ -82,7 +82,7 @@ const ProjectCard = ({ project }) => {
           border-radius: 8px;
           color: ${Theme.bg};
           display: grid;
-          grid-template-columns: 20% 1fr 5%;
+          grid-template-columns: minmax(20%, auto) 1fr 5%;
           grid-template-rows: 1fr 1fr 1fr;
           grid-template-areas:
             "image title blog"
@@ -105,6 +105,7 @@ const ProjectCard = ({ project }) => {
           alt={img.alt}
           title={img.title}
           css={css`
+            margin: 5px;
             height: 85%;
             grid-area: image;
             justify-self: center;

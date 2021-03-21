@@ -1,13 +1,22 @@
 import * as React from "react";
 import { useState } from "react";
 import { css } from "@emotion/react";
+
 import Theme from "./Theme";
-import ProjectsData from "./ProjectsData";
-import GatsbyIcon from "../images/dev-icons/gatsby.svg";
+import PROJECTS_DATA from "./PROJECTS_DATA";
+import { SORT_LABELS } from "./PROJECTS_DATA";
 import ProjectCard from "./ProjectCard";
 
+import SortingPanel from "./SortingPanel";
+
 const Projects = ({ scrollTarget }) => {
-  const [displayRequest, setDisplayRequest] = useState("featured");
+  const [displayRequest, setDisplayRequest] = useState(SORT_LABELS.featured);
+
+  const prjs = PROJECTS_DATA.flatMap((project) =>
+    project.sortLabels.includes(displayRequest)
+      ? [<ProjectCard project={project} key={project.name} />]
+      : []
+  );
   return (
     <section
       ref={scrollTarget}
@@ -15,23 +24,18 @@ const Projects = ({ scrollTarget }) => {
         display: grid;
         row-gap: 5vh;
         grid-template-columns: 10% 1fr;
+        /* grid-auto-flow: dense; */
         background-color: ${Theme.bg};
         width: 100vw;
         max-width: 100%;
-        height: 100vh;
+        padding-left: 1vw;
       `}
     >
-      <div
-        css={css`
-          background-color: white;
-          height: 100%;
-        `}
-      ></div>
-      {ProjectsData.flatMap((project) =>
-        project.sortLabels.includes(displayRequest)
-          ? [<ProjectCard project={project} key={project.name} />]
-          : []
-      )}
+      <SortingPanel
+        panelHeight={String(prjs.length + 1)}
+        setDisplayRequest={setDisplayRequest}
+      />
+      {prjs}
     </section>
   );
 };
