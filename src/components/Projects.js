@@ -24,7 +24,7 @@ const Projects = ({ scrollTarget }) => {
         display: grid;
         row-gap: 5vh;
         grid-template-columns: 10% 1fr;
-        /* grid-auto-flow: dense; */
+        align-items: center;
         background-color: ${Theme.bg};
         width: 100vw;
         max-width: 100%;
@@ -33,6 +33,7 @@ const Projects = ({ scrollTarget }) => {
     >
       <SortingPanel
         panelHeight={String(prjs.length + 1)}
+        displayRequest={displayRequest}
         setDisplayRequest={setDisplayRequest}
       />
       {prjs}

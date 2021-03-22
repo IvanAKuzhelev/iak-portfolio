@@ -11,14 +11,20 @@ import NodeIcon from "../images/dev-icons/nodejs.svg";
 import ThreeD from "../images/3d.svg";
 import Star from "../images/star.svg";
 
-const SortingPanel = ({ panelHeight, setDisplayRequest }) => {
+const SortingPanel = ({ panelHeight, displayRequest, setDisplayRequest }) => {
   const SortButton = (props) => {
+    const stateDepStyle = (props) =>
+      props.payload === displayRequest
+        ? css``
+        : css`
+            transform: scale(0.85);
+            filter: grayscale(0.18);
+          `;
     return (
       <button
         css={css`
           all: unset;
-          transform: scale(0.9);
-          filter: grayscale(0.15);
+          ${stateDepStyle(props)}
           &:hover {
             transform: scale(1);
             filter: grayscale(0);
@@ -45,13 +51,7 @@ const SortingPanel = ({ panelHeight, setDisplayRequest }) => {
         top: 0;
       `}
     >
-      <SortButton
-        payload={SORT_LABELS.featured}
-        onClick={(props) => {
-          console.log(props.payload);
-          setDisplayRequest(props.payload);
-        }}
-      >
+      <SortButton payload={SORT_LABELS.featured}>
         <SortImage src={Star} alt="Featured" title="Featured" />
       </SortButton>
       <SortButton payload={SORT_LABELS.node}>
@@ -69,7 +69,7 @@ const SortingPanel = ({ panelHeight, setDisplayRequest }) => {
       <SortImage
         src={TSIcon}
         css={css`
-          transform: scale(0.9);
+          transform: scale(0.8);
           filter: grayscale(0.5);
         `}
         alt="TypeScript"
