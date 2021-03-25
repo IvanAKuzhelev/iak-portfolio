@@ -4,12 +4,13 @@ import styled from "@emotion/styled";
 
 import { SORT_LABELS } from "./PROJECTS_DATA";
 
-import JSIcon from "../images/dev-icons/javascript.svg";
-import TSIcon from "../images/dev-icons/typescript.svg";
-import ReactIcon from "../images/dev-icons/react.svg";
-import NodeIcon from "../images/dev-icons/nodejs.svg";
-import ThreeD from "../images/3d.svg";
-import Star from "../images/star.svg";
+import JSIcon from "../../images/dev-icons/javascript.svg";
+import TSIcon from "../../images/dev-icons/typescript.svg";
+import ReactIcon from "../../images/dev-icons/react.svg";
+import NodeIcon from "../../images/dev-icons/nodejs.svg";
+import ThreeD from "../../images/3d.svg";
+import Star from "../../images/star.svg";
+import Theme from "../Theme";
 
 const SortingPanel = ({ panelHeight, displayRequest, setDisplayRequest }) => {
   const SortButton = (props) => {
@@ -28,6 +29,9 @@ const SortingPanel = ({ panelHeight, displayRequest, setDisplayRequest }) => {
           &:hover {
             transform: scale(1);
             filter: grayscale(0);
+          }
+          &:focus {
+            outline: ${Theme.white} solid 3px;
           }
         `}
         onClick={() => {

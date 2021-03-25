@@ -2,21 +2,23 @@ import * as React from "react";
 import { css } from "@emotion/react";
 import { useState } from "react";
 import styled from "@emotion/styled";
-import Theme from "./Theme";
+import Theme from "../Theme";
 
 const ProjectCard = ({ project }) => {
   const { name, img, description, features, stack } = project;
-  const [displayed, setDisplayed] = useState("desc");
+  const [displayed, setDisplayed] = useState("Description");
   const CardButton = styled.button`
     all: unset;
     box-sizing: border-box;
-    width: 10vw;
+    width: 160px;
     background-color: white;
+
+    ${({ children }) => (children === displayed ? "" : "opacity: 0.94;")};
     position: absolute;
-    top: -6vh;
-    right: ${(props) => 10 + 80 * Number(props.position)}px;
-    height: 6vh;
-    border: solid 2px blue;
+    text-align: center;
+    top: -47px;
+    right: ${({ position }) => 10 + 180 * Number(position)}px;
+    height: 50px;
     clip-path: polygon(
       0% 20px,
       20px 0%,
@@ -32,7 +34,7 @@ const ProjectCard = ({ project }) => {
   `;
   const Content = () => {
     switch (displayed) {
-      case "desc":
+      case "Description":
         return (
           <p
             css={css`
@@ -42,7 +44,7 @@ const ProjectCard = ({ project }) => {
             {description}
           </p>
         );
-      case "feat":
+      case "Features":
         return (
           <ul
             css={css`
@@ -54,7 +56,7 @@ const ProjectCard = ({ project }) => {
             ))}
           </ul>
         );
-      case "stack":
+      case "Stack":
         return (
           <ul
             css={css`
@@ -91,13 +93,13 @@ const ProjectCard = ({ project }) => {
           align-items: center;
         `}
       >
-        <CardButton position="2" onClick={() => setDisplayed("desc")}>
+        <CardButton position="2" onClick={() => setDisplayed("Description")}>
           Description
         </CardButton>
-        <CardButton position="1" onClick={() => setDisplayed("feat")}>
+        <CardButton position="1" onClick={() => setDisplayed("Features")}>
           Features
         </CardButton>
-        <CardButton position="0" onClick={() => setDisplayed("stack")}>
+        <CardButton position="0" onClick={() => setDisplayed("Stack")}>
           Stack
         </CardButton>
         <img

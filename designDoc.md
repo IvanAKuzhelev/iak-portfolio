@@ -1,10 +1,10 @@
 # npm Carousel
 
-[] packages array
-[] interval
-[] Sliding in
-[] pause on hover
-[] resume after leaving mouse
+[x] packages array
+[x] interval
+[] ~~Sliding in~~
+[x] pause on hover
+[x] resume after leaving mouse
 
 # Resume
 

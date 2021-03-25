@@ -9,6 +9,8 @@ import GatsbyIcon from "../images/dev-icons/gatsby.svg";
 import NodeIcon from "../images/dev-icons/nodejs.svg";
 import ExpressIcon from "../images/dev-icons/express.svg";
 import GitIcon from "../images/dev-icons/git.svg";
+import Slider from "./npmSlider/slider";
+import npmIcon from "../images/dev-icons/npm.svg";
 
 const Hero = ({ scrollTarget }) => {
   const MinorIcon = styled.img`
@@ -68,6 +70,15 @@ const Hero = ({ scrollTarget }) => {
         <MinorIcon src={NodeIcon} alt="Node.js" title="Node.js" />
         <MinorIcon src={ExpressIcon} alt="Express" title="Express" />
         <MinorIcon src={GitIcon} alt="Git" title="Git" />
+        <MinorIcon
+          src={npmIcon}
+          alt="npm"
+          title="npm"
+          css={css`
+            grid-column-start: 1;
+          `}
+        />
+        <Slider />
         <h1
           css={css`
             font-size: 4rem;

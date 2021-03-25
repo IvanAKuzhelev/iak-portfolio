@@ -1,4 +1,4 @@
-import GatsbyIcon from "../images/dev-icons/gatsby.svg";
+import GatsbyIcon from "../../images/dev-icons/gatsby.svg";
 const STACK = {
   gatsby: {
     text: "Gatsby JS",

@@ -2,7 +2,7 @@ import * as React from "react";
 import { useState } from "react";
 import { css } from "@emotion/react";
 
-import Theme from "./Theme";
+import Theme from "../Theme";
 import PROJECTS_DATA from "./PROJECTS_DATA";
 import { SORT_LABELS } from "./PROJECTS_DATA";
 import ProjectCard from "./ProjectCard";
