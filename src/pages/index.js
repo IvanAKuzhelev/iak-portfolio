@@ -33,6 +33,14 @@ const IndexPage = () => {
           nav > ul {
             list-style: none;
           }
+          //to override defaults
+          button,
+          input,
+          select,
+          textarea {
+            font-family: inherit;
+            font-size: inherit;
+          }
           // Chromium custom scrollbar
           body::-webkit-scrollbar {
             background-color: #01111d;

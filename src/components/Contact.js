@@ -6,23 +6,30 @@ const Contact = () => {
   return (
     <section
       css={css`
-        //
         height: 100vh;
-        padding: 20px;
+        padding: 40px;
         display: grid;
+        grid-template-rows: auto 1fr;
         grid-template-columns: 1fr 1fr;
-        grid-template-areas: "contactCTA" "form";
-        //
+        grid-template-areas:
+          "cta cta"
+          "info form";
       `}
     >
-      <div>
-        <h2
-          css={css`
-            font-size: 4.5rem;
-          `}
-        >
-          Let's work together!
-        </h2>
+      <h2
+        css={css`
+          font-size: 4.5rem;
+          grid-area: cta;
+          place-self: center;
+        `}
+      >
+        Let's work together!
+      </h2>
+      <div
+        css={css`
+          grid-area: info;
+        `}
+      >
         <p>
           I'm available through the means below or you can contact me via the
           form here.

@@ -7,6 +7,7 @@ import Theme from "../Theme";
 const ProjectCard = ({ project }) => {
   const { name, img, description, features, stack } = project;
   const [displayed, setDisplayed] = useState("Description");
+  const tabButtonShift = 50;
   const CardButton = styled.button`
     all: unset;
     box-sizing: border-box;
@@ -16,9 +17,9 @@ const ProjectCard = ({ project }) => {
     ${({ children }) => (children === displayed ? "" : "opacity: 0.94;")};
     position: absolute;
     text-align: center;
-    top: -47px;
+    top: ${-0.94 * tabButtonShift}px;
     right: ${({ position }) => 10 + 180 * Number(position)}px;
-    height: 50px;
+    height: ${tabButtonShift}px;
     clip-path: polygon(
       0% 20px,
       20px 0%,
@@ -29,7 +30,9 @@ const ProjectCard = ({ project }) => {
       0 100%
     );
     &:focus {
-      box-shadow: 0 0 10px magenta;
+      outline-offset: -6px;
+      outline: 3px solid ${Theme.bg};
+      /* box-shadow: 0 0 10px magenta; */
     }
   `;
   const Content = () => {
@@ -78,6 +81,7 @@ const ProjectCard = ({ project }) => {
           background-color: ${Theme.white};
           grid-column: 2/3;
           justify-self: center;
+          margin-top: ${1.06 * tabButtonShift}px;
           width: 85%;
           height: 30vh;
           min-height: 200px;

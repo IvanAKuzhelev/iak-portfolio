@@ -11,13 +11,14 @@ const Slider = () => {
   const Wrapper = styled.div`
     grid-column: 2/-3;
     width: 100%;
-    height: 2rem;
+    height: 2.4rem;
     background-color: lightgray;
     color: ${Theme.bg};
     border-radius: 7px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 0.4vh;
   `;
 
   useEffect(() => {
