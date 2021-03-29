@@ -27,7 +27,7 @@ const Header = () => {
         align-items: center;
         background-color: transparent;
         height: 5vh;
-        padding: 3vh 5vw 0;
+        padding: 3vh 3vw 0;
         font-size: 1.2rem;
         position: absolute;
         z-index: 1;
@@ -53,10 +53,13 @@ const Header = () => {
           <NavItem>
             <NavLink to="/">Projects</NavLink>
           </NavItem>
-
           <NavItem>
-            <NavLink to="/">Blog</NavLink>
+            <NavLink to="/resume">Resume</NavLink>
           </NavItem>
+
+          {/* <NavItem>
+            <NavLink to="/">Blog</NavLink>
+          </NavItem> */}
           <NavItem>
             <NavLink to="/">Contact</NavLink>
           </NavItem>
