@@ -5,19 +5,21 @@ import githubIcon from "../images/dev-icons/github.svg";
 import liveIcon from "../images/live.svg";
 import { Global, css } from "@emotion/react";
 import FancyLink from "../components/FancyLink";
+import Theme from "../components/Theme";
 
 const Resume = () => {
   const ResumeContainer = styled.article`
     padding: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.6fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.6fr auto auto 1fr 1fr;
     grid-template-areas:
       "name name contacts"
       "projects projects about"
       "projects projects skills"
       "education education skills"
       "experience experience skills";
+    grid-gap: 15px;
     height: 100vh;
   `;
   const UnstyledList = styled.ul`
@@ -33,12 +35,15 @@ const Resume = () => {
   const Project = ({ title, text, github, live }) => {
     const Item = styled.li`
       display: grid;
+      margin-top: 10px;
       grid-template-columns: auto auto 1fr;
       grid-template-rows: auto auto 1fr;
       grid-template-areas:
         "title title title"
         "github live ."
         "text text text";
+      grid-gap: 3px 10px;
+      max-width: 700px;
     `;
     return (
       <Item>
@@ -54,17 +59,14 @@ const Resume = () => {
           alt="GitHub"
           text="GitHub"
           href={github}
-          css={css`
-            grid-area: github;
-          `}
-          // size={1.4}
+          extraStyles="grid-area: github;"
         />
         <FancyLink
           img={liveIcon}
           alt="web"
           text="Live"
           href={live}
-          // size={1.4}
+          extraStyles="grid-area: live;"
         />
         <p
           css={css`
@@ -88,6 +90,8 @@ const Resume = () => {
           html,
           body {
             margin: 0;
+            color: ${Theme.bg};
+            background-color: ${Theme.white};
             font-family: "Fira Code";
           }
           h1 {
@@ -114,10 +118,12 @@ const Resume = () => {
               </a>
             </li>
             <li>
-              <a href="mailto:ivanakuzhelev@gmail.com">
-                <Icon src={emailIcon} alt="email" />
-                ivanakuzhelev@gmail.com
-              </a>
+              <FancyLink
+                href="mailto:ivanakuzhelev@gmail.com"
+                img={emailIcon}
+                alt="email"
+                text="ivanakuzhelev@gmail.com"
+              />
             </li>
             <li>
               <a href="https://github.com/IvanAKuzhelev">
@@ -135,31 +141,27 @@ const Resume = () => {
               text="Portfolio written in React/Gatsby. Some of the highlights are
                 conditional sorting/rendering layout made with CSS grid and use
                 of netlify forms."
-              github="https://github.com/IvanAKuzhelev/iak-portfolio"
-              live=""
+              github="https://github.com/IvanAKuzhelev/iak-portfolio/"
+              live="https://iak.codes/"
             />
-            <li>
-              <h4>Developer portfolio</h4>
-              <p>
-                Portfolio written in React/Gatsby. Some of the highlights are
-                conditional sorting/rendering layout made with CSS grid and use
-                of netlify forms.
-              </p>
-            </li>
-            <li>
-              <h4>Fullstack box visualisator.</h4>
-              <p>
-                A box rendering with the THREE.js BufferGeometry from the
+            <Project
+              title="Fullstack box visualisator"
+              text="A box rendering with the THREE.js BufferGeometry from the
                 server-sent data in the Gatsby site. A user can change the
                 dimensions of the box via the form which requests the new data.
-                The server is a simple node app hosted on a Linux VM managed by
-                me (NGINX, SSL, pm2).
-              </p>
-            </li>
+                The server is a simple node app hosted on a Linux VM (NGINX, SSL, pm2)."
+              github="https://github.com/IvanAKuzhelev/box-server-fe/"
+              live="https://3d-box.iak.codes/"
+            />
           </UnstyledList>
         </ResumeSection>
         <ResumeSection area="about">
           <h3>About</h3>
+          <p>
+            Chemist turned web dev in search of the neverending supply of new
+            challenges and financial stability. Looking for proffessional growth
+            via building cool things on the web.
+          </p>
         </ResumeSection>
         <ResumeSection area="skills">
           <h3>Skills</h3>

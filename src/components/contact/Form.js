@@ -8,16 +8,16 @@ const Form = () => {
   const [pot, setPot] = useState("");
   const [msg, setMsg] = useState("");
   const [sent, setSent] = useState(false);
-  const hiddenInput = styled.input`
+  const HiddenInput = styled.input`
     display: none;
   `;
-  // REFACTOR TO STYLED!!!!
-  const inputStyles = `
+  const HiddenLabel = HiddenInput.withComponent("label");
+  const StyledInput = styled.input`
     margin-bottom: 12px;
-    margin-top: 2px; 
+    margin-top: 2px;
     border-radius: 7px;
-    
-    `;
+  `;
+  const StyledTextArea = StyledInput.withComponent("textarea");
   return (
     <form
       // netlify-honeypot="bot-field"
@@ -29,28 +29,17 @@ const Form = () => {
       `}
     >
       {/* Netlify spam prevention */}
-      <label
-        css={css`
-          display: none;
-        `}
-        htmlFor="pot"
-      >
+      <HiddenLabel htmlFor="pot">
         Don’t fill this out if you’re human:
-      </label>
-      <input
-        css={css`
-          display: none;
-        `}
+      </HiddenLabel>
+      <HiddenInput
         name="bot-field"
         id="pot"
         value={pot}
         onChange={(e) => setPot(e.target.value)}
       />
       <label htmlFor="name">Name</label>
-      <input
-        css={css`
-          ${inputStyles}
-        `}
+      <StyledInput
         id="name"
         name="name"
         value={name}
@@ -58,10 +47,7 @@ const Form = () => {
         onChange={(e) => setName(e.target.value)}
       />
       <label htmlFor="email">Email</label>
-      <input
-        css={css`
-          ${inputStyles}
-        `}
+      <StyledInput
         id="email"
         name="email"
         value={email}
@@ -69,15 +55,12 @@ const Form = () => {
         onChange={(e) => setEmail(e.target.value)}
       />
       <label htmlFor="msg">Message</label>
-      <textarea
-        css={css`
-          ${inputStyles}
-        `}
+      <StyledTextArea
         rows="7"
         id="msg"
         value={msg}
         onChange={(e) => setMsg(e.target.value)}
-      ></textarea>
+      ></StyledTextArea>
       <button>Hit me up!</button>
     </form>
   );

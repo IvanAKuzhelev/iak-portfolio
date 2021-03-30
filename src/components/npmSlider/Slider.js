@@ -23,6 +23,7 @@ const Slider = () => {
 
   useEffect(() => {
     timerID.current = setTimeout(() => setCounter(counter + 1), 1000);
+    return () => clearTimeout(timerID.current);
   }, [counter]);
   return (
     <Wrapper
