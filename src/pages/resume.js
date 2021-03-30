@@ -33,15 +33,30 @@ const Resume = () => {
   const Project = ({ title, text, github, live }) => {
     const Item = styled.li`
       display: grid;
+      grid-template-columns: auto auto 1fr;
+      grid-template-rows: auto auto 1fr;
+      grid-template-areas:
+        "title title title"
+        "github live ."
+        "text text text";
     `;
     return (
       <Item>
-        <h4>{title}</h4>
+        <h4
+          css={css`
+            grid-area: title;
+          `}
+        >
+          {title}
+        </h4>
         <FancyLink
           img={githubIcon}
           alt="GitHub"
           text="GitHub"
           href={github}
+          css={css`
+            grid-area: github;
+          `}
           // size={1.4}
         />
         <FancyLink
@@ -51,7 +66,13 @@ const Resume = () => {
           href={live}
           // size={1.4}
         />
-        <p>{text}</p>
+        <p
+          css={css`
+            grid-area: text;
+          `}
+        >
+          {text}
+        </p>
       </Item>
     );
   };
