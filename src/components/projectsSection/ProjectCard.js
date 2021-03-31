@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 import { useState } from "react";
 import styled from "@emotion/styled";
 import Theme from "../Theme";
+import ProjectLink from "./ProjectLink";
 
 const ProjectCard = ({ project }) => {
   const { name, img, description, features, stack } = project;
@@ -42,6 +43,7 @@ const ProjectCard = ({ project }) => {
           <p
             css={css`
               grid-area: content;
+              align-self: start;
             `}
           >
             {description}
@@ -125,6 +127,9 @@ const ProjectCard = ({ project }) => {
           {name}
         </h2>
         <Content />
+        <ProjectLink linkType="blog" project={project} />
+        <ProjectLink linkType="live" project={project} />
+        <ProjectLink linkType="github" project={project} />
       </div>
     </>
   );

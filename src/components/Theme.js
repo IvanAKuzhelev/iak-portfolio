@@ -5,5 +5,6 @@ const Theme = {
   darker: "#01111d",
   light: "#d6deeb",
   white: "#fbfbfb",
+  green: "#22da6e",
 };
 export default Theme;

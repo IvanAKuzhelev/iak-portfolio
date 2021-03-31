@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
             margin: 0;
             background-color: #011627;
             color: ${Theme.white};
-            font-family: "Fira Code";
+            font-family: "Fira Code", monospace;
             // firefox scrollbar - upcoming standart
             scrollbar-color: #d6deeb #01111d;
           }

@@ -8,9 +8,28 @@ const STACK = {
     text: "Emotion JS",
     url: "https://emotion.sh/docs/introduction",
   },
+  node: {
+    text: "Node JS",
+  },
   netlifyForms: {
     text: "Netlify forms",
     url: "https://www.netlify.com/products/forms/",
+  },
+  three: {
+    text: "Three.js",
+    url: "https://threejs.org/",
+  },
+  context: {
+    text: "React Context",
+  },
+  js: {
+    text: "JavaScript",
+  },
+  css: {
+    text: "CSS",
+  },
+  html: {
+    text: "HTML",
   },
 };
 const SORT_LABELS = {
@@ -24,28 +43,46 @@ const PROJECTS_DATA = [
   {
     name: "this Portfolio",
     description:
-      "Lucas ipsum dolor sit amet kyle myneyrsh bria qel-droma kal luminara hutt typho bail tatooine. Ugnaught finis atrivis jinn utapau dooku darth kal. Ken chiss taun solo. Yoda wharl lobot moff. Skywalker whiphid pavan neti mccool.",
-    features: ["SSG", "dynamic slug", "Netlify forms", "flex & grid"],
-    stack: [STACK.gatsby, "Emotion JS", "Netlify functions"],
+      "Portfolio written in React/Gatsby. Some of the highlights are conditional sorting/rendering layout made with CSS grid and use of netlify forms.",
+    features: [
+      "SSG",
+      "conditional rendering",
+      "flexbox & grid",
+      "Netlify forms",
+    ],
+    stack: [STACK.gatsby, STACK.emotion, STACK.netlifyForms],
     img: { src: GatsbyIcon, alt: "alt", title: "title" },
+    github: "https://github.com/IvanAKuzhelev/iak-portfolio",
+    live: "https://iak.codes/",
     sortLabels: [SORT_LABELS.featured, SORT_LABELS.react],
   },
   {
     name: "Box Server",
-    description:
-      "Organa sal-solo palpatine thisspias polis sith. Shimrra muzzer sal-solo lahara cerea tatooine asajj roos vulptereen.",
-    features: [],
-    stack: ["Gatsby JS", "Emotion JS", "Netlify functions"],
+    description: `A box rendering with the Three.js BufferGeometry from the
+                server-sent data in the Gatsby site. A user can change the
+                dimensions of the box via the form which requests the new data.
+                The server is a simple node app hosted on a Linux VM (NGINX, SSL, pm2).`,
+    features: ["React Context", "BufferGeometry", "Buffer array upates"],
+    stack: [STACK.three, STACK.gatsby, STACK.node],
     img: { src: GatsbyIcon, alt: "alt", title: "title" },
-    sortLabels: [SORT_LABELS.featured, SORT_LABELS.react, SORT_LABELS.threeD],
+    github: "https://github.com/IvanAKuzhelev/box-server-fe",
+    live: "https://3d-box.iak.codes/",
+    sortLabels: [
+      SORT_LABELS.featured,
+      SORT_LABELS.react,
+      SORT_LABELS.threeD,
+      SORT_LABELS.node,
+    ],
   },
   {
-    name: "Calc",
+    name: "iOS-style calculator",
     description:
-      " Muun iego poggle rom fel finis orus. Alderaan san momaw antilles jabba darth. Ooryl var poggle bajic zorba neimoidian elomin. Auril taung melodie dooku. Corellia karrde leia raa.",
-    features: [],
-    stack: ["Gatsby JS", "Emotion JS", "Netlify functions"],
+      "Simple calculator making use of JS event bubbling and CSS Flexbox",
+    features: ["CSS flexBox", "Event bubbling"],
+    stack: [STACK.js, STACK.css, STACK.html],
     img: { src: GatsbyIcon, alt: "alt", title: "title" },
+    github: "https://github.com/IvanAKuzhelev/calc",
+    live: "https://ivanakuzhelev.github.io/calc/",
     sortLabels: [SORT_LABELS.featured, SORT_LABELS.vanilla],
   },
   {

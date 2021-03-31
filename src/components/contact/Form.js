@@ -2,12 +2,13 @@ import * as React from "react";
 import { useState } from "react";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+import Theme from "../Theme";
 const Form = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [pot, setPot] = useState("");
   const [msg, setMsg] = useState("");
-  const [sent, setSent] = useState(false);
+  const [sent, setSent] = useState(true);
   const HiddenInput = styled.input`
     display: none;
   `;
@@ -16,6 +17,12 @@ const Form = () => {
     margin-bottom: 12px;
     margin-top: 2px;
     border-radius: 7px;
+  `;
+  const SubmitButton = styled.button`
+    &:disabled {
+      background-color: ${Theme.green};
+      color: ${Theme.bg};
+    }
   `;
   const StyledTextArea = StyledInput.withComponent("textarea");
   return (
@@ -61,7 +68,9 @@ const Form = () => {
         value={msg}
         onChange={(e) => setMsg(e.target.value)}
       ></StyledTextArea>
-      <button>Hit me up!</button>
+      <SubmitButton type="submit" disabled={sent}>
+        {sent ? "Sent successfully!" : "Hit me up!"}
+      </SubmitButton>
     </form>
   );
 };

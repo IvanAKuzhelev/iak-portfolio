@@ -92,7 +92,7 @@ const Resume = () => {
             margin: 0;
             color: ${Theme.bg};
             background-color: ${Theme.white};
-            font-family: "Fira Code";
+            font-family: "Fira Code", monospace;
           }
           h1 {
             font-size: 2rem;
@@ -106,17 +106,6 @@ const Resume = () => {
         </ResumeSection>
         <ResumeSection area="contacts">
           <UnstyledList>
-            {/* <li>
-              <a
-                css={css`
-                  color: inherit;
-                `}
-                href="https://iak.codes/"
-              >
-                <Icon src={liveIcon} alt="web" />
-                iak.codes
-              </a>
-            </li> */}
             <li>
               <FancyLink
                 href="https://iak.codes/"
