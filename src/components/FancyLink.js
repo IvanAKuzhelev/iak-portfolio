@@ -21,7 +21,7 @@ const FancyLink = ({
     margin-bottom: ${-0.25 * size}rem;
   `;
   return (
-    <StyledHref href={href}>
+    <StyledHref href={href} target="_blank" rel="noopener noreferrer">
       <Icon src={img} alt={alt} />
       {text}
     </StyledHref>

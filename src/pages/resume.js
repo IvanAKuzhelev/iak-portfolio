@@ -11,19 +11,19 @@ const Resume = () => {
   const ResumeContainer = styled.article`
     padding: 20px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 0.6fr auto auto 1fr 1fr;
     grid-template-areas:
-      "name name contacts"
-      "projects projects about"
-      "projects projects skills"
-      "education education skills"
-      "experience experience skills";
+      ". name contacts"
+      "about projects skills"
+      "experience projects skills"
+      "experience education skills";
     grid-gap: 15px;
     height: 100vh;
   `;
   const UnstyledList = styled.ul`
     list-style: none;
+    padding-inline-start: 0;
   `;
   const Icon = styled.img`
     height: 1rem;
@@ -106,7 +106,7 @@ const Resume = () => {
         </ResumeSection>
         <ResumeSection area="contacts">
           <UnstyledList>
-            <li>
+            {/* <li>
               <a
                 css={css`
                   color: inherit;
@@ -116,6 +116,14 @@ const Resume = () => {
                 <Icon src={liveIcon} alt="web" />
                 iak.codes
               </a>
+            </li> */}
+            <li>
+              <FancyLink
+                href="https://iak.codes/"
+                img={liveIcon}
+                alt="web"
+                text="iak.codes"
+              />
             </li>
             <li>
               <FancyLink
@@ -159,18 +167,38 @@ const Resume = () => {
           <h3>About</h3>
           <p>
             Chemist turned web dev in search of the neverending supply of new
-            challenges and financial stability. Looking for proffessional growth
+            challenges and financial stability. Looking for professional growth
             via building cool things on the web.
           </p>
         </ResumeSection>
         <ResumeSection area="skills">
           <h3>Skills</h3>
+          <ul>
+            <li>JavaScript(ES6+)</li>
+            <li>React</li>
+            <li>CSS in JS</li>
+            <li>Gatsby</li>
+            <li>Node JS</li>
+            <li>THREE JS</li>
+            <li>semantic HTML</li>
+            <li>CSS</li>
+            {/* <li>TypeScript familiarity</li> */}
+          </ul>
         </ResumeSection>
         <ResumeSection area="education">
           <h3>Education</h3>
         </ResumeSection>
         <ResumeSection area="experience">
           <h3>Experience</h3>
+          <UnstyledList>
+            <li>
+              <h4>Prometheus - foundry, 2019-present</h4>
+              <p></p>
+            </li>
+            <li>
+              <h4>G.G. Devyatykh IChPS - research institution, 2018-2019</h4>
+            </li>
+          </UnstyledList>
         </ResumeSection>
         {/* <ResumeSection area=""></ResumeSection> */}
       </ResumeContainer>
