@@ -19,11 +19,12 @@ const Projects = ({ scrollTarget }) => {
   );
   return (
     <section
+      id="projects"
       ref={scrollTarget}
       css={css`
         display: grid;
         row-gap: 5vh;
-        grid-template-columns: 10% 1fr;
+        grid-template-columns: 15vw 1fr;
         align-items: center;
         background-color: ${Theme.bg};
         width: 100vw;

@@ -25,6 +25,7 @@ const SortingPanel = ({ panelHeight, displayRequest, setDisplayRequest }) => {
       <button
         css={css`
           all: unset;
+          cursor: pointer;
           ${stateDepStyle(props)}
           &:hover {
             transform: scale(1);
@@ -44,7 +45,10 @@ const SortingPanel = ({ panelHeight, displayRequest, setDisplayRequest }) => {
   };
 
   const SortImage = styled.img`
-    width: 9vw;
+    width: 14vw;
+    @media (min-width: 900px) {
+      width: 9vw;
+    }
   `;
   return (
     <div

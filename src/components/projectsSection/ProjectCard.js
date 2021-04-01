@@ -11,29 +11,54 @@ const ProjectCard = ({ project }) => {
   const tabButtonShift = 50;
   const CardButton = styled.button`
     all: unset;
-    box-sizing: border-box;
-    width: 160px;
-    background-color: white;
-
-    ${({ children }) => (children === displayed ? "" : "opacity: 0.94;")};
     position: absolute;
+    top: -18px;
+    background-color: white;
+    height: 20px;
+    width: 80px;
+
+    font-size: 0.7rem;
     text-align: center;
-    top: ${-0.94 * tabButtonShift}px;
-    right: ${({ position }) => 10 + 180 * Number(position)}px;
-    height: ${tabButtonShift}px;
+
+    right: ${({ position }) => 5 + 85 * Number(position)}px;
     clip-path: polygon(
-      0% 20px,
-      20px 0%,
-      calc(100% - 20px) 0%,
-      100% 20px,
-      100% calc(100% - 20px),
+      0% 4px,
+      4px 0%,
+      calc(100% - 4px) 0%,
+      100% 4px,
+      100% calc(100% - 4px),
       100% 100%,
       0 100%
     );
+    ${({ children }) => (children === displayed ? "" : "opacity: 0.94;")};
+
     &:focus {
       outline-offset: -6px;
       outline: 3px solid ${Theme.bg};
-      /* box-shadow: 0 0 10px magenta; */
+    }
+    @media (min-width: 900px) {
+      box-sizing: border-box;
+      position: absolute;
+      font-size: inherit;
+      background-color: white;
+      width: 160px;
+
+      top: ${-0.94 * tabButtonShift}px;
+      right: ${({ position }) => 10 + 180 * Number(position)}px;
+      height: ${tabButtonShift}px;
+      clip-path: polygon(
+        0% 20px,
+        20px 0%,
+        calc(100% - 20px) 0%,
+        100% 20px,
+        100% calc(100% - 20px),
+        100% 100%,
+        0 100%
+      );
+      &:focus {
+        outline-offset: -6px;
+        outline: 3px solid ${Theme.bg};
+      }
     }
   `;
   const Content = () => {
@@ -54,6 +79,7 @@ const ProjectCard = ({ project }) => {
           <ul
             css={css`
               grid-area: content;
+              align-self: start;
             `}
           >
             {features.map((feature) => (
@@ -66,6 +92,7 @@ const ProjectCard = ({ project }) => {
           <ul
             css={css`
               grid-area: content;
+              align-self: start;
             `}
           >
             {stack.map((stackItem) => (
@@ -73,30 +100,52 @@ const ProjectCard = ({ project }) => {
             ))}
           </ul>
         );
+      default:
+        console.log("Something is happening");
+        return (
+          <p
+            css={css`
+              grid-area: content;
+              align-self: start;
+              text-align: justify;
+            `}
+          >
+            {description}
+          </p>
+        );
     }
   };
   return (
     <>
-      <div
+      <section
         css={css`
           position: relative;
-          background-color: ${Theme.white};
-          grid-column: 2/3;
           justify-self: center;
-          margin-top: ${1.06 * tabButtonShift}px;
-          width: 85%;
-          height: 30vh;
-          min-height: 200px;
-          border-radius: 8px;
+          background-color: ${Theme.white};
           color: ${Theme.bg};
+          border-radius: 8px;
+          grid-column: 2/3;
+          width: 95%;
           display: grid;
-          grid-template-columns: minmax(20%, 30%) 1fr 5%;
-          grid-template-rows: 1fr 1fr 1fr;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-template-rows: auto auto auto auto;
           grid-template-areas:
-            "image title blog"
-            "image content live"
-            "image content github";
-          align-items: center;
+            "image image image"
+            "title title title"
+            "content content content"
+            "live blog github";
+          @media (min-width: 900px) {
+            margin-top: ${1.06 * tabButtonShift}px;
+            height: 30vh;
+            min-height: 200px;
+            grid-template-columns: minmax(20%, 30%) 1fr 5%;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-areas:
+              "image title blog"
+              "image content live"
+              "image content github";
+            align-items: center;
+          }
         `}
       >
         <CardButton position="2" onClick={() => setDisplayed("Description")}>
@@ -113,6 +162,9 @@ const ProjectCard = ({ project }) => {
           alt={img.alt}
           title={img.title}
           css={css`
+            @media (min-width: 900px) {
+              width: 85%;
+            }
             margin: 5px;
             height: 85%;
             grid-area: image;
@@ -130,7 +182,7 @@ const ProjectCard = ({ project }) => {
         <ProjectLink linkType="blog" project={project} />
         <ProjectLink linkType="live" project={project} />
         <ProjectLink linkType="github" project={project} />
-      </div>
+      </section>
     </>
   );
 };

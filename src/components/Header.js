@@ -7,15 +7,19 @@ import Theme from "./Theme";
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const NavItem = styled.li`
-    margin-left: 3vw;
     // Underline on hover
     background: linear-gradient(${Theme.white}, ${Theme.white}) center bottom;
     padding-bottom: 6px;
-    background-size: 0% 2px;
     background-repeat: no-repeat;
-    transition: all 0.35s;
-    &:hover {
-      background-size: 100% 2px;
+    background-size: 100% 2px;
+
+    @media (min-width: 900px) {
+      margin-left: 3vw;
+      background-size: 0% 2px;
+      transition: all 0.35s;
+      &:hover {
+        background-size: 100% 2px;
+      }
     }
   `;
   const NavLink = styled(Link)`
@@ -25,18 +29,24 @@ const Header = () => {
   return (
     <header
       css={css`
+        display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: space-between;
         background-color: transparent;
-        height: 5vh;
         padding: 3vh 3vw 0;
-        font-size: 1.2rem;
+        height: 5vh;
+        font-size: 0.7rem;
         position: absolute;
         z-index: 1;
         width: 100vw;
         max-width: 100%;
-
-        display: flex;
+        flex-direction: column;
+        @media (min-width: 900px) {
+          flex-direction: row;
+          font-size: 1.2rem;
+          justify-content: space-between;
+          align-items: center;
+        }
       `}
     >
       <p
@@ -50,10 +60,12 @@ const Header = () => {
         <ul
           css={css`
             display: flex;
+            justify-content: space-between;
+            /* width: 360px; */
           `}
         >
           <NavItem>
-            <NavLink to="/">Projects</NavLink>
+            <NavLink to="/#projects">Projects</NavLink>
           </NavItem>
           <NavItem>
             <NavLink to="/resume">Resume</NavLink>
@@ -63,7 +75,7 @@ const Header = () => {
             <NavLink to="/">Blog</NavLink>
           </NavItem> */}
           <NavItem>
-            <NavLink to="/">Contact</NavLink>
+            <NavLink to="/#contact">Contact</NavLink>
           </NavItem>
         </ul>
       </nav>

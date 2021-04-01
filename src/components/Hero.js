@@ -14,9 +14,11 @@ import npmIcon from "../images/dev-icons/npm.svg";
 
 const Hero = ({ scrollTarget }) => {
   const MinorIcon = styled.img`
-    height: 14.5vh;
-    ${(props) =>
-      props.hardPlacement ? `grid-area: ${props.hardPlacement};` : ""}
+    display: none;
+    @media (min-width: 900px) {
+      display: block;
+      height: 14.5vh;
+    }
   `;
   return (
     <>
@@ -27,18 +29,26 @@ const Hero = ({ scrollTarget }) => {
           max-width: 100%;
           background-color: #011627;
           display: grid;
-          padding: 10.5vh 3vw 0;
-          grid-template-columns: 14.5vh 14.5vh auto auto 1fr 50%;
-          grid-template-rows: 14.5vh 14.5vh auto auto 1fr;
-          grid-gap: 1vh;
+          grid-template-columns: auto 1fr;
           place-items: center center;
-          background: rgb(1, 22, 39);
-          background: linear-gradient(
-            280deg,
-            rgba(1, 22, 39, 1) 47%,
-            rgba(246, 246, 246, 0.05) 49%,
-            rgba(1, 22, 39, 1) 51%
-          );
+          grid-template-rows: 2fr 1fr;
+
+          place-content: center center;
+          padding: 15vh 5px;
+
+          @media (min-width: 900px) {
+            padding: 10.5vh 3vw 0;
+            grid-template-columns: 14.5vh 14.5vh auto auto 1fr 50%;
+            grid-template-rows: 14.5vh 14.5vh auto auto 1fr;
+            grid-gap: 1vh;
+            background: rgb(1, 22, 39);
+            background: linear-gradient(
+              280deg,
+              rgba(1, 22, 39, 1) 47%,
+              rgba(246, 246, 246, 0.05) 49%,
+              rgba(1, 22, 39, 1) 51%
+            );
+          }
         `}
       >
         <img
@@ -46,6 +56,10 @@ const Hero = ({ scrollTarget }) => {
           alt="JS"
           title="ES6 and beyond"
           css={css`
+            display: none;
+            @media (min-width: 900px) {
+              display: block;
+            }
             height: 30vh;
             grid-area: 1/1/3/3;
           `}
@@ -75,19 +89,27 @@ const Hero = ({ scrollTarget }) => {
           alt="npm"
           title="npm"
           css={css`
-            grid-column-start: 1;
-            width: 14.5vh;
+            width: 15vw;
+            @media (min-width: 900px) {
+              grid-column-start: 1;
+              width: 14.5vh;
+            }
           `}
         />
         <Slider />
         <h1
           css={css`
-            font-size: 4rem;
+            font-size: 3rem;
             text-align: center;
-            grid-column: -2/-1;
-            grid-row: 1/-1;
+            grid-column: 1/-1;
+            grid-row: 1/2;
             align-self: center;
-            padding-bottom: 15vh;
+            @media (min-width: 900px) {
+              grid-column: -2/-1;
+              grid-row: 1/-1;
+              font-size: 4rem;
+              padding-bottom: 15vh;
+            }
           `}
         >
           A <br /> Javascript

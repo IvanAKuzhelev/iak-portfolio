@@ -33,6 +33,7 @@ const Form = () => {
         display: flex;
         flex-direction: column;
         font-size: 1.4rem;
+        max-width: 100%;
       `}
     >
       {/* Netlify spam prevention */}

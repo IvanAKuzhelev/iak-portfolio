@@ -9,7 +9,7 @@ const Slider = () => {
   const [counter, setCounter] = useState(0);
   const timerID = useRef(null);
   const Wrapper = styled.div`
-    grid-column: 2/-3;
+    grid-column: 2/3;
     width: 100%;
     height: 2.4rem;
     background-color: lightgray;
@@ -19,6 +19,9 @@ const Slider = () => {
     justify-content: center;
     align-items: center;
     margin-bottom: 0.4vh;
+    @media (min-width: 900px) {
+      grid-column: 2/-3;
+    }
   `;
 
   useEffect(() => {

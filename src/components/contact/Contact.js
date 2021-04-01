@@ -9,27 +9,46 @@ import twitterIcon from "../../images/dev-icons/twitter-white.svg";
 const Contact = () => {
   return (
     <section
+      id="contact"
       css={css`
+        padding: 5px;
         height: 100vh;
-        padding: 40px;
         display: grid;
+
         grid-template-rows: auto auto auto auto auto 1fr;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         grid-template-areas:
-          "cta cta"
-          "info form"
-          "GitHub form"
-          "twitter form"
-          "email form"
-          ". form";
-        grid-gap: 30px;
+          "cta"
+          "info"
+          "GitHub"
+          "twitter"
+          "email"
+          "form";
+        grid-gap: 10px;
+
+        @media (min-width: 900px) {
+          padding: 40px;
+          grid-template-rows: auto auto auto auto auto 1fr;
+          grid-template-columns: 1fr 1fr;
+          grid-template-areas:
+            "cta cta"
+            "info form"
+            "GitHub form"
+            "twitter form"
+            "email form"
+            ". form";
+          grid-gap: 30px;
+        }
       `}
     >
       <h2
         css={css`
-          font-size: 4.5rem;
+          font-size: 3rem;
           grid-area: cta;
           place-self: center;
+          @media (min-width: 900px) {
+            font-size: 4.5rem;
+          }
         `}
       >
         Let's work together!

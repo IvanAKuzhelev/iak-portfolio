@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 import githubIcon from "../../images/dev-icons/github.svg";
 import liveIcon from "../../images/live.svg";
