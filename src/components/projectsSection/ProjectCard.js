@@ -126,6 +126,7 @@ const ProjectCard = ({ project }) => {
           border-radius: 8px;
           grid-column: 2/3;
           width: 95%;
+          margin-top: 24px;
           display: grid;
           grid-template-columns: 1fr 1fr 1fr;
           grid-template-rows: auto auto auto auto;
@@ -138,7 +139,7 @@ const ProjectCard = ({ project }) => {
             margin-top: ${1.06 * tabButtonShift}px;
             height: 30vh;
             min-height: 200px;
-            grid-template-columns: minmax(20%, 30%) 1fr 5%;
+            grid-template-columns: minmax(35%, auto) 1fr 5%;
             grid-template-rows: 1fr 1fr 1fr;
             grid-template-areas:
               "image title blog"
@@ -163,10 +164,11 @@ const ProjectCard = ({ project }) => {
           title={img.title}
           css={css`
             @media (min-width: 900px) {
-              width: 85%;
+              height: 85%;
+              width: auto;
             }
             margin: 5px;
-            height: 85%;
+            width: 85%;
             grid-area: image;
             justify-self: center;
           `}

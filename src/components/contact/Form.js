@@ -8,7 +8,7 @@ const Form = () => {
   const [email, setEmail] = useState("");
   const [pot, setPot] = useState("");
   const [msg, setMsg] = useState("");
-  const [sent, setSent] = useState(true);
+  const [sent, setSent] = useState(false);
   const HiddenInput = styled.input`
     display: none;
   `;
@@ -52,7 +52,7 @@ const Form = () => {
 
   return (
     <form
-      // netlify-honeypot="bot-field"
+      netlify-honeypot="bot-field"
       css={css`
         grid-area: form;
         display: flex;
@@ -60,7 +60,7 @@ const Form = () => {
         font-size: 1.4rem;
         max-width: 100%;
       `}
-      // onSubmit={handleSubmit}
+      onSubmit={handleSubmit}
     >
       {/* Netlify spam prevention */}
       <HiddenLabel htmlFor="pot">

@@ -3,6 +3,7 @@ module.exports = {
     title: "iak-portfolio",
   },
   plugins: [
+    "gatsby-plugin-image",
     "gatsby-plugin-emotion",
     "gatsby-plugin-sharp",
     "gatsby-plugin-react-helmet",

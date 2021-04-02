@@ -1,4 +1,7 @@
 import GatsbyIcon from "../../images/dev-icons/gatsby.svg";
+import portfolioImage from "../../images/projects/portfolio.jpg";
+import boxImage from "../../images/projects/box.gif";
+import calcImage from "../../images/projects/calc.jpg";
 const STACK = {
   gatsby: {
     text: "Gatsby JS",
@@ -51,20 +54,20 @@ const PROJECTS_DATA = [
       "Netlify forms",
     ],
     stack: [STACK.gatsby, STACK.emotion, STACK.netlifyForms],
-    img: { src: GatsbyIcon, alt: "alt", title: "title" },
+    img: { src: portfolioImage, alt: "portfolio", title: "portfolio" },
     github: "https://github.com/IvanAKuzhelev/iak-portfolio",
     live: "https://iak.codes/",
     sortLabels: [SORT_LABELS.featured, SORT_LABELS.react],
   },
   {
-    name: "Box Server",
+    name: "Fullstack box visualisator",
     description: `A box rendering with the Three.js BufferGeometry from the
                 server-sent data in the Gatsby site. A user can change the
                 dimensions of the box via the form which requests the new data.
                 The server is a simple node app hosted on a Linux VM (NGINX, SSL, pm2).`,
     features: ["React Context", "BufferGeometry", "Buffer array upates"],
     stack: [STACK.three, STACK.gatsby, STACK.node],
-    img: { src: GatsbyIcon, alt: "alt", title: "title" },
+    img: { src: boxImage, alt: "3D box", title: "3D box" },
     github: "https://github.com/IvanAKuzhelev/box-server-fe",
     live: "https://3d-box.iak.codes/",
     sortLabels: [
@@ -80,7 +83,7 @@ const PROJECTS_DATA = [
       "Simple calculator making use of JS event bubbling and CSS Flexbox",
     features: ["CSS flexBox", "Event bubbling"],
     stack: [STACK.js, STACK.css, STACK.html],
-    img: { src: GatsbyIcon, alt: "alt", title: "title" },
+    img: { src: calcImage, alt: "calculator", title: "calculator" },
     github: "https://github.com/IvanAKuzhelev/calc",
     live: "https://ivanakuzhelev.github.io/calc/",
     sortLabels: [SORT_LABELS.featured, SORT_LABELS.vanilla],
