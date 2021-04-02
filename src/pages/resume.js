@@ -6,20 +6,34 @@ import liveIcon from "../images/live.svg";
 import { Global, css } from "@emotion/react";
 import FancyLink from "../components/FancyLink";
 import Theme from "../components/Theme";
+import { Helmet } from "react-helmet";
+import favicon from "../images/favicon.svg";
 
 const Resume = () => {
   const ResumeContainer = styled.article`
-    padding: 20px;
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 0.6fr auto auto 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto;
     grid-template-areas:
-      ". name contacts"
-      "about projects skills"
-      "experience projects skills"
-      "experience education skills";
-    grid-gap: 15px;
-    height: 100vh;
+      "name"
+      "about"
+      "projects"
+      "skills"
+      "education"
+      "experience"
+      "contacts";
+
+    @media (min-width: 900px) {
+      grid-gap: 15px;
+      padding: 20px;
+      height: 100vh;
+      grid-template-rows: 0.6fr auto auto 1fr 1fr;
+      grid-template-areas:
+        ". name contacts"
+        "about projects skills"
+        "experience projects skills"
+        "experience education skills";
+    }
   `;
   const UnstyledList = styled.ul`
     list-style: none;
@@ -80,6 +94,10 @@ const Resume = () => {
   };
   return (
     <>
+      <Helmet>
+        <title>Ivan A. Kuzhelev - Resume</title>
+        <link rel="icon" type="image/svg+xml" href={favicon} />
+      </Helmet>
       <Global
         styles={css`
           * {
@@ -96,6 +114,10 @@ const Resume = () => {
           }
           h1 {
             font-size: 2rem;
+          }
+          li,
+          p {
+            font-size: 0.9rem;
           }
         `}
       />
@@ -176,16 +198,41 @@ const Resume = () => {
         </ResumeSection>
         <ResumeSection area="education">
           <h3>Education</h3>
+          <h4>Frontend Masters, 2020-2021</h4>
+          <ul>
+            <li>Complete Intro to Web Development</li>
+            <li>JavaScript: From Fundamentals to Functional JS</li>
+            <li>JavaScript: The Hard Parts</li>
+            <li>The Hard Parts of Object Oriented JavaScript</li>
+            <li>Intro and Intermediate React</li>
+            <li>State Management in Pure React</li>
+          </ul>
+          <h4>FreeCodeCamp, 2019-2021</h4>
+          <p>JS, CSS, HTML basics</p>
+          <h4>Lobachevsky University</h4>
+          <p>Pure and applied chemistry - specialist</p>
         </ResumeSection>
         <ResumeSection area="experience">
           <h3>Experience</h3>
           <UnstyledList>
             <li>
-              <h4>Prometheus - foundry, 2019-present</h4>
-              <p></p>
+              <h4>
+                Prometheus - foundry,
+                <br />
+                2019-present
+              </h4>
+              <p>
+                Chemical engineer. Methodical work in a high-pressure
+                environment.
+              </p>
             </li>
             <li>
-              <h4>G.G. Devyatykh IChPS - research institution, 2018-2019</h4>
+              <h4>
+                ICHPS - research institution,
+                <br />
+                2018-2019
+              </h4>
+              <p>Researcher. Teamwork on creative technological solutions.</p>
             </li>
           </UnstyledList>
         </ResumeSection>

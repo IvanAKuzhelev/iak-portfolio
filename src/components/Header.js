@@ -1,11 +1,9 @@
 import * as React from "react";
-import { useState } from "react";
 import { Link } from "gatsby";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import Theme from "./Theme";
 const Header = () => {
-  const [showMenu, setShowMenu] = useState(false);
   const NavItem = styled.li`
     // Underline on hover
     background: linear-gradient(${Theme.white}, ${Theme.white}) center bottom;
@@ -61,7 +59,6 @@ const Header = () => {
           css={css`
             display: flex;
             justify-content: space-between;
-            /* width: 360px; */
           `}
         >
           <NavItem>

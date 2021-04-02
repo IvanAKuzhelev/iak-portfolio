@@ -25,6 +25,31 @@ const Form = () => {
     }
   `;
   const StyledTextArea = StyledInput.withComponent("textarea");
+  //netlify forms
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": "portfolio",
+        name: name,
+        email: email,
+        pot: pot,
+        msg: msg,
+      }),
+    })
+      .then(() => setSent(true))
+      .catch((error) => console.log(error));
+  };
+
   return (
     <form
       // netlify-honeypot="bot-field"
@@ -35,6 +60,7 @@ const Form = () => {
         font-size: 1.4rem;
         max-width: 100%;
       `}
+      // onSubmit={handleSubmit}
     >
       {/* Netlify spam prevention */}
       <HiddenLabel htmlFor="pot">
@@ -46,6 +72,7 @@ const Form = () => {
         value={pot}
         onChange={(e) => setPot(e.target.value)}
       />
+      <input type="hidden" name="form-name" value="portfolio" />
       <label htmlFor="name">Name</label>
       <StyledInput
         id="name"
