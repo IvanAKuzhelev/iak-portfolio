@@ -104,7 +104,7 @@ const Form = () => {
       <textarea
         rows="7"
         id="msg"
-        name="message"
+        name="msg"
         value={msg}
         required
         css={css`
