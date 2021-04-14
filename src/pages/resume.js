@@ -11,6 +11,7 @@ import favicon from "../images/favicon.svg";
 
 const Resume = () => {
   const ResumeContainer = styled.article`
+    height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto auto auto;
@@ -25,9 +26,10 @@ const Resume = () => {
 
     @media (min-width: 900px) {
       grid-gap: 15px;
-      padding: 20px;
+      padding: 20px 20px 0;
       height: 100vh;
-      grid-template-rows: 0.6fr auto auto 1fr 1fr;
+      grid-template-rows: 0.35fr auto auto 1fr;
+      grid-template-columns: 1fr 2.2fr 1fr;
       grid-template-areas:
         ". name contacts"
         "about projects skills"
@@ -45,6 +47,7 @@ const Resume = () => {
   `;
   const ResumeSection = styled.section`
     grid-area: ${({ area }) => area};
+    border-bottom: 2px solid lightgray;
   `;
   const Project = ({ title, text, github, live }) => {
     const Item = styled.li`
@@ -232,7 +235,10 @@ const Resume = () => {
                 <br />
                 2018-2019
               </h4>
-              <p>Researcher. Teamwork on creative technological solutions.</p>
+              <p>
+                Researcher. Teamwork on creative technological solutions.
+                Presenting research at various conferences.
+              </p>
             </li>
           </UnstyledList>
         </ResumeSection>
