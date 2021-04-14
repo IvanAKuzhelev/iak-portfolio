@@ -12,9 +12,9 @@ const ProjectCard = ({ project }) => {
   const CardButton = styled.button`
     all: unset;
     position: absolute;
-    top: -18px;
+    top: -28px;
     background-color: white;
-    height: 20px;
+    height: 30px;
     width: 80px;
 
     font-size: 0.7rem;
@@ -126,7 +126,8 @@ const ProjectCard = ({ project }) => {
           border-radius: 8px;
           grid-column: 2/3;
           width: 95%;
-          margin-top: 24px;
+          padding: 5px;
+          margin-top: 32px;
           display: grid;
           grid-template-columns: 1fr 1fr 1fr;
           grid-template-rows: auto auto auto auto;

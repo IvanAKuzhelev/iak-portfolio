@@ -13,6 +13,7 @@ const Resume = () => {
   const ResumeContainer = styled.article`
     height: 100vh;
     display: grid;
+    padding: 3px 3px 0;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto auto auto;
     grid-template-areas:
@@ -127,7 +128,7 @@ const Resume = () => {
       <ResumeContainer>
         <ResumeSection area="name">
           <h1>Ivan A. Kuzhelev</h1>
-          <h2>Javascript developer</h2>
+          <h2>Software developer</h2>
         </ResumeSection>
         <ResumeSection area="contacts">
           <UnstyledList>

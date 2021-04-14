@@ -31,10 +31,10 @@ const Hero = ({ scrollTarget }) => {
           display: grid;
           grid-template-columns: auto 1fr;
           place-items: center center;
-          grid-template-rows: 2fr 1fr;
+          grid-template-rows: 2fr 1fr 15vh;
 
           place-content: center center;
-          padding: 15vh 5px;
+          padding: 15vh 5px 0;
 
           @media (min-width: 900px) {
             padding: 10.5vh 3vw 0;
@@ -112,7 +112,7 @@ const Hero = ({ scrollTarget }) => {
             }
           `}
         >
-          A <br /> Javascript
+          A <br /> software
           <br /> developer
           <br /> for your
           <br /> needs
