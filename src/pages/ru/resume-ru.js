@@ -1,13 +1,13 @@
 import * as React from "react";
 import styled from "@emotion/styled";
-import emailIcon from "../images/email_black_24dp.svg";
-import githubIcon from "../images/dev-icons/github.svg";
-import liveIcon from "../images/live.svg";
+import emailIcon from "../../images/email_black_24dp.svg";
+import githubIcon from "../../images/dev-icons/github.svg";
+import liveIcon from "../../images/live.svg";
 import { Global, css } from "@emotion/react";
-import FancyLink from "../components/FancyLink";
-import Theme from "../components/Theme";
+import FancyLink from "../../components/FancyLink";
+import Theme from "../../components/Theme";
 import { Helmet } from "react-helmet";
-import favicon from "../images/favicon.svg";
+import favicon from "../../images/favicon.svg";
 
 const Resume = () => {
   const ResumeContainer = styled.article`
@@ -136,13 +136,16 @@ const Resume = () => {
             a {
               text-decoration: none;
             }
+            a:visited {
+              color: ${Theme.bg};
+            }
           }
         `}
       />
       <ResumeContainer>
         <ResumeSection area="name">
-          <h1>Ivan A. Kuzhelev</h1>
-          <h2>Software developer</h2>
+          <h1>Иван Кужелев</h1>
+          <h2>Программист</h2>
         </ResumeSection>
         <ResumeSection area="contacts">
           <UnstyledList>
@@ -171,37 +174,39 @@ const Resume = () => {
           </UnstyledList>
         </ResumeSection>
         <ResumeSection area="projects">
-          <h3>My projects</h3>
+          <h3>Мои проекты</h3>
           <UnstyledList>
             <Project
-              title="Developer portfolio"
-              text="Portfolio written in React/Gatsby. Some of the highlights are
-                conditional sorting/rendering layout made with CSS grid and use
-                of netlify forms."
-              github="https://github.com/IvanAKuzhelev/iak-portfolio/"
-              live="https://iak.codes/"
-            />
-            <Project
               title="Fullstack box visualisator"
-              text="A box rendering with the THREE.js BufferGeometry from the
-                server-sent data in the Gatsby site. A user can change the
-                dimensions of the box via the form which requests the new data.
-                The server is a simple node app hosted on a Linux VM (NGINX, SSL, pm2)."
+              text="Коробочка, рендерящаяся с помощью THREE.js BufferGeometry на основе данных полученных с сервера Gatsby-клиентом. Пользователь может изменять размеры с помощью формы посылающей запрос на сервер.
+    Сервером является Node JS приложение на Linux VM на Azure (NGINX, SSL, pm2).
+"
               github="https://github.com/IvanAKuzhelev/box-server-fe/"
               live="https://3d-box.iak.codes/"
+            />
+            <Project
+              title="Developer portfolio"
+              text="Портфолио написанное на React/Gatsby. В функционал входят
+                conditional sorting/rendering, CSS grid и использование netlify forms.
+"
+              github="https://github.com/IvanAKuzhelev/iak-portfolio/"
+              live="https://iak.codes/"
             />
           </UnstyledList>
         </ResumeSection>
         <ResumeSection area="about">
-          <h3>About</h3>
+          <h3>О себе</h3>
           <p>
-            Chemist turned web dev in search of the neverending supply of new
-            challenges and financial stability. Looking for professional growth
-            via building cool things on the web.
+            Ищу возможности применять и развивать знания JavaScript на практике.
+            Заинтересован как возможностями frontend 'a (есть опыт с React и
+            Gatsby), так и backenda (Node, Express). Могу запустить сервер c
+            NGINX на VM. В ближайшее время планирую изучить WebSockets,
+            реляционные базы данных Typescript и Next. С радостью скорректирую
+            план под конкретные нужды.
           </p>
         </ResumeSection>
         <ResumeSection area="skills">
-          <h3>Skills</h3>
+          <h3>Навыки</h3>
           <ul>
             <li>JavaScript(ES6+)</li>
             <li>React</li>
@@ -213,11 +218,12 @@ const Resume = () => {
             <li>THREE JS</li>
             <li>semantic HTML</li>
             <li>CSS</li>
+            <li>English - Upper Intermediate</li>
             {/* <li>TypeScript familiarity</li> */}
           </ul>
         </ResumeSection>
         <ResumeSection area="education">
-          <h3>Education</h3>
+          <h3>Образование</h3>
           <h4>Frontend Masters, 2020-2021</h4>
           <ul>
             <li>Complete Intro to Web Development</li>
@@ -230,33 +236,34 @@ const Resume = () => {
             <li>State Management in Pure React</li>
           </ul>
           <h4>FreeCodeCamp, 2019-2021</h4>
-          <p>JS, CSS, HTML basics</p>
-          <h4>Lobachevsky University</h4>
-          <p>Pure and applied chemistry - specialist</p>
+          <p>Основы JS, CSS, HTML</p>
+          <h4>ННГУ им. Н.И. Лобачевского, 2018</h4>
+          <p>Фундаментальная и прикладная химия - специалист</p>
         </ResumeSection>
         <ResumeSection area="experience">
-          <h3>Experience</h3>
+          <h3>Опыт работы</h3>
           <UnstyledList>
             <li>
               <h4>
-                Prometheus - foundry,
+                АО ННИИММ «Прометей»
                 <br />
-                2019-present
+                2019-н.в.
               </h4>
               <p>
-                Chemical engineer. Methodical work in a high-pressure
-                environment.
+                Инженер-химик Методичное и педантичное выполнение работы в
+                стрессовых ситуациях.
               </p>
             </li>
             <li>
               <h4>
-                ICHPS - research institution,
+                ИХВВ им. Г.Г. Девятых РАН
                 <br />
                 2018-2019
               </h4>
               <p>
-                Researcher. Teamwork on creative technological solutions.
-                Presenting research at various conferences.
+                Химик-исследователь. Работа в команде над творческими решениями
+                технологических задач. Представление результатов исследований
+                (конференции и патент)
               </p>
             </li>
           </UnstyledList>
