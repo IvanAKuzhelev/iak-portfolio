@@ -3,6 +3,8 @@ import styled from "@emotion/styled";
 import emailIcon from "../../images/email_black_24dp.svg";
 import githubIcon from "../../images/dev-icons/github.svg";
 import liveIcon from "../../images/live.svg";
+import pdfIcon from "../../images/pdf.svg";
+import resumePDF from "../../pdf/IAKuzhelev-Resume.pdf";
 import { Global, css } from "@emotion/react";
 import FancyLink from "../../components/FancyLink";
 import Theme from "../../components/Theme";
@@ -10,6 +12,22 @@ import { Helmet } from "react-helmet";
 import favicon from "../../images/favicon.svg";
 
 const Resume = () => {
+  const Circle = styled.div`
+    background-color: ${Theme.bg};
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    position: absolute;
+    bottom: 70px;
+    right: ${({ pos }) => 2 + pos * 5}rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: ${Theme.white};
+    @media print {
+      display: none;
+    }
+  `;
   const ResumeContainer = styled.article`
     height: 100vh;
     display: grid;
@@ -145,7 +163,7 @@ const Resume = () => {
       <ResumeContainer>
         <ResumeSection area="name">
           <h1>Иван Кужелев</h1>
-          <h2>Программист</h2>
+          <h2>Javascript разработчик</h2>
         </ResumeSection>
         <ResumeSection area="contacts">
           <UnstyledList>
@@ -177,20 +195,20 @@ const Resume = () => {
           <h3>Мои проекты</h3>
           <UnstyledList>
             <Project
-              title="Fullstack box visualisator"
-              text="Коробочка, рендерящаяся с помощью THREE.js BufferGeometry на основе данных полученных с сервера Gatsby-клиентом. Пользователь может изменять размеры с помощью формы посылающей запрос на сервер.
-    Сервером является Node JS приложение на Linux VM на Azure (NGINX, SSL, pm2).
-"
-              github="https://github.com/IvanAKuzhelev/box-server-fe/"
-              live="https://3d-box.iak.codes/"
-            />
-            <Project
               title="Developer portfolio"
               text="Портфолио написанное на React/Gatsby. В функционал входят
-                conditional sorting/rendering, CSS grid и использование netlify forms.
+    conditional sorting/rendering, CSS grid и использование netlify forms.
 "
               github="https://github.com/IvanAKuzhelev/iak-portfolio/"
               live="https://iak.codes/"
+            />
+            <Project
+              title="Fullstack box visualisator"
+              text="Коробочка, рендерящаяся с помощью THREE.js BufferGeometry на основе данных полученных с сервера Gatsby-клиентом. Пользователь может изменять размеры с помощью формы посылающей запрос на сервер.
+    Присутствует ночной режим, использующий localStorage и предаочтения в операционной системе. Сервером является Node JS приложение на Linux VM на Azure (NGINX, SSL, pm2).
+"
+              github="https://github.com/IvanAKuzhelev/box-server-fe/"
+              live="https://3d-box.iak.codes/"
             />
           </UnstyledList>
         </ResumeSection>
@@ -201,8 +219,8 @@ const Resume = () => {
             Заинтересован как возможностями frontend 'a (есть опыт с React и
             Gatsby), так и backenda (Node, Express). Могу запустить сервер c
             NGINX на VM. В ближайшее время планирую изучить WebSockets,
-            реляционные базы данных Typescript и Next. С радостью скорректирую
-            план под конкретные нужды.
+            Typescript и Next. С радостью скорректирую планы под конкретные
+            нужды.
           </p>
         </ResumeSection>
         <ResumeSection area="skills">
@@ -212,10 +230,10 @@ const Resume = () => {
             <li>React</li>
             <li>CSS in JS</li>
             <li>Gatsby</li>
+            <li>THREE JS</li>
             <li>Node JS</li>
             <li>NGINX</li>
             <li>Certbot</li>
-            <li>THREE JS</li>
             <li>semantic HTML</li>
             <li>CSS</li>
             <li>English - Upper Intermediate</li>
@@ -247,7 +265,7 @@ const Resume = () => {
               <h4>
                 АО ННИИММ «Прометей»
                 <br />
-                2019-н.в.
+                11/2019-н.в.
               </h4>
               <p>
                 Инженер-химик Методичное и педантичное выполнение работы в
@@ -258,7 +276,7 @@ const Resume = () => {
               <h4>
                 ИХВВ им. Г.Г. Девятых РАН
                 <br />
-                2018-2019
+                10/2018-12/2019
               </h4>
               <p>
                 Химик-исследователь. Работа в команде над творческими решениями
@@ -269,6 +287,18 @@ const Resume = () => {
           </UnstyledList>
         </ResumeSection>
         {/* <ResumeSection area=""></ResumeSection> */}
+        <Circle pos={0}>
+          <a href={resumePDF} download>
+            <img
+              css={css`
+                height: 2rem;
+              `}
+              src={pdfIcon}
+              alt="Download pdf"
+              title="Download pdf"
+            />
+          </a>
+        </Circle>
       </ResumeContainer>
     </>
   );
