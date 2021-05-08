@@ -205,7 +205,7 @@ const Resume = () => {
             <Project
               title="Fullstack box visualisator"
               text="Коробочка, рендерящаяся с помощью THREE.js BufferGeometry на основе данных полученных с сервера Gatsby-клиентом. Пользователь может изменять размеры с помощью формы посылающей запрос на сервер.
-    Присутствует ночной режим, использующий localStorage и предаочтения в операционной системе. Сервером является Node JS приложение на Linux VM на Azure (NGINX, SSL, pm2).
+    Присутствует ночной режим, использующий localStorage и предпочтения в операционной системе. Сервером является Node JS приложение на Linux VM на Azure (NGINX, SSL, pm2).
 "
               github="https://github.com/IvanAKuzhelev/box-server-fe/"
               live="https://3d-box.iak.codes/"
@@ -217,7 +217,7 @@ const Resume = () => {
           <p>
             Ищу возможности применять и развивать знания JavaScript на практике.
             Заинтересован как возможностями frontend 'a (есть опыт с React и
-            Gatsby), так и backenda (Node, Express). Могу запустить сервер c
+            Gatsby), так и backend 'a (Node, Express). Могу запустить сервер c
             NGINX на VM. В ближайшее время планирую изучить WebSockets,
             Typescript и Next. С радостью скорректирую планы под конкретные
             нужды.

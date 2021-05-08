@@ -34,12 +34,11 @@ const Hero = ({ scrollTarget }) => {
           grid-template-rows: 2fr 1fr 15vh;
 
           place-content: center center;
-          padding: 15vh 5px 0;
-
+          padding: 15vh 5px 0 0;
           @media (min-width: 900px) {
             padding: 10.5vh 3vw 0;
             grid-template-columns: 14.5vh 14.5vh auto auto 1fr 50%;
-            grid-template-rows: 14.5vh 14.5vh auto auto 1fr;
+            grid-template-rows: 14.5vh 14.5vh auto auto 1fr auto;
             grid-gap: 1vh;
             background: rgb(1, 22, 39);
             background: linear-gradient(

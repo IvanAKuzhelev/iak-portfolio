@@ -4,20 +4,7 @@ import { css, keyframes } from "@emotion/react";
 
 import arrow from "../images/arrow.svg";
 const ScrollCTA = (props) => {
-  const {
-    scrollTarget,
-    size = 1,
-    message = "Learn more",
-    period = 3,
-    //position + extra
-    extStyles = `       
-    position: absolute;
-        bottom: 2vh;
-        left: 0;
-        right: 0;
-        margin-left: auto;
-        margin-right: auto;`,
-  } = props;
+  const { scrollTarget, size = 1, message = "Learn more", period = 3 } = props;
   const bouncing = keyframes`
         0%   { transform:  translateY(0); } 
         ${(100 * 0.15) / period}%  { transform:  translateY(0); }
@@ -40,7 +27,7 @@ const ScrollCTA = (props) => {
         -webkit-text-fill-color: inherit;
         background-color: transparent;
         font-size: ${size * 1.2}rem;
-        ${extStyles}
+        grid-column: 1/-1;
         &:focus {
           outline: white solid 3px;
         }

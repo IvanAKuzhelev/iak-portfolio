@@ -38,6 +38,9 @@ const ProjectLink = ({ linkType, project }) => {
         src={ICONS[linkType].src}
         alt={ICONS[linkType].alt}
         title={ICONS[linkType].title}
+        css={css`
+          max-height: 4rem;
+        `}
       />
     </a>
   );
