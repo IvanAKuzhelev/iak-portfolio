@@ -3,6 +3,8 @@ import styled from "@emotion/styled";
 import emailIcon from "../images/email_black_24dp.svg";
 import githubIcon from "../images/dev-icons/github.svg";
 import liveIcon from "../images/live.svg";
+import pdfIcon from "../images/pdf.svg";
+import resumePDF from "../pdf/IAKuzhelev-Resume-EN.pdf";
 import { Global, css } from "@emotion/react";
 import FancyLink from "../components/FancyLink";
 import Theme from "../components/Theme";
@@ -12,6 +14,7 @@ import favicon from "../images/favicon.svg";
 const Resume = () => {
   const ResumeContainer = styled.article`
     height: 100vh;
+    max-width: 100%;
     display: grid;
     padding: 3px 3px 0;
     grid-template-columns: 1fr;
@@ -105,6 +108,25 @@ const Resume = () => {
       </Item>
     );
   };
+  const Circle = styled.div`
+    background-color: ${Theme.bg};
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    position: absolute;
+    bottom: 70px;
+    right: ${({ pos }) => 2 + pos * 5}rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: ${Theme.white};
+    @media print {
+      display: none;
+    }
+    @media (max-width: 900px) {
+      display: none;
+    } ;
+  `;
   return (
     <>
       <Helmet>
@@ -135,6 +157,9 @@ const Resume = () => {
           @media print {
             a {
               text-decoration: none;
+            }
+            a:visited {
+              color: ${Theme.bg};
             }
           }
         `}
@@ -224,6 +249,7 @@ const Resume = () => {
             <li>JavaScript: From Fundamentals to Functional JS</li>
             <li>JavaScript: The Hard Parts</li>
             <li>The Hard Parts of Object Oriented JavaScript</li>
+            <li>A Practical Guide to Algorithms with JavaScript</li>
             <li>Full Stack for Front-End Engineers</li>
             <li>Introduction to Node.js</li>
             <li>Intro and Intermediate React</li>
@@ -261,6 +287,18 @@ const Resume = () => {
             </li>
           </UnstyledList>
         </ResumeSection>
+        <Circle pos={0}>
+          <a href={resumePDF} download>
+            <img
+              css={css`
+                height: 2rem;
+              `}
+              src={pdfIcon}
+              alt="Download pdf"
+              title="Download pdf"
+            />
+          </a>
+        </Circle>
         {/* <ResumeSection area=""></ResumeSection> */}
       </ResumeContainer>
     </>
