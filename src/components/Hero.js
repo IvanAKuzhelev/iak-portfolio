@@ -48,6 +48,9 @@ const Hero = ({ scrollTarget }) => {
               rgba(1, 22, 39, 1) 51%
             );
           }
+          @media (min-width: 1600px) {
+            grid-gap: 1.7vh;
+          }
         `}
       >
         <img
@@ -116,7 +119,7 @@ const Hero = ({ scrollTarget }) => {
           <br /> for your
           <br /> needs
         </h1>
-        <ScrollCTA scrollTarget={scrollTarget} message="See my projects" />
+        <ScrollCTA scrollTarget={scrollTarget} message="Hit me up!" />
       </main>
     </>
   );

@@ -3,7 +3,7 @@ import { useRef } from "react";
 import "@fontsource/fira-code";
 import Hero from "../components/Hero";
 import Header from "../components/Header";
-import Projects from "../components/projectsSection/Projects";
+// import Projects from "../components/projectsSection/Projects";
 import Contact from "../components/contact/Contact";
 import Layout from "../components/Layout";
 import { Helmet } from "react-helmet";
@@ -14,14 +14,14 @@ const IndexPage = () => {
   return (
     <>
       <Helmet>
-        <title>Ivan A. Kuzhelev - JS Dev</title>
+        <title>Ivan A. Kuzhelev - Web Dev</title>
         <link rel="icon" type="image/svg+xml" href={favicon} />
       </Helmet>
       <Layout>
         <Header />
         <Hero scrollTarget={scrollTarget} />
-        <Projects scrollTarget={scrollTarget} />
-        <Contact />
+        {/* <Projects scrollTarget={scrollTarget} /> */}
+        <Contact scrollRef={scrollTarget} />
       </Layout>
     </>
   );

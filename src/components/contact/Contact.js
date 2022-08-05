@@ -6,10 +6,11 @@ import emailIcon from "../../images/email-white.svg";
 import githubIcon from "../../images/dev-icons/github-white.svg";
 import twitterIcon from "../../images/dev-icons/twitter-white.svg";
 
-const Contact = () => {
+const Contact = ({ scrollRef }) => {
   return (
     <section
       id="contact"
+      ref={scrollRef}
       css={css`
         padding: 5px;
         height: 100vh;

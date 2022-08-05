@@ -3,8 +3,12 @@ import { useRef } from "react";
 import { css, keyframes } from "@emotion/react";
 
 import arrow from "../images/arrow.svg";
-const ScrollCTA = (props) => {
-  const { scrollTarget, size = 1, message = "Learn more", period = 3 } = props;
+const ScrollCTA = ({
+  scrollTarget,
+  size = 1,
+  message = "Learn more",
+  period = 1,
+}) => {
   const bouncing = keyframes`
         0%   { transform:  translateY(0); } 
         ${(100 * 0.15) / period}%  { transform:  translateY(0); }
@@ -40,6 +44,11 @@ const ScrollCTA = (props) => {
           background-image: url(${arrow});
           background-position: center;
           animation: ${bouncing} ${period}s ease infinite;
+        }
+        @media (min-width: 1600px) {
+          padding-bottom: 32px;
+          background-color: red;
+          font-size: ${size * 1.4}rem;
         }
       `}
     >

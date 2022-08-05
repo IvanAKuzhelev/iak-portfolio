@@ -1,7 +1,5 @@
-# Portfolio site
+# Personal site
 
-Portfolio written in React/Gatsby. Some of the highlights are
-conditional sorting/rendering layout made with CSS grid and use
-of netlify forms.
+Personal site written in React/Gatsby.
 
-https://iak.codes/
+https://iak.today/

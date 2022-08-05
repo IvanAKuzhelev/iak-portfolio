@@ -62,11 +62,14 @@ const Header = () => {
           `}
         >
           <NavItem>
+            <NavLink to="https://github.com/IvanAKuzhelev">GitHub</NavLink>
+          </NavItem>
+          {/* <NavItem>
             <NavLink to="/#projects">Projects</NavLink>
-          </NavItem>
-          <NavItem>
+          </NavItem> */}
+          {/* <NavItem>
             <NavLink to="/resume">Resume</NavLink>
-          </NavItem>
+          </NavItem> */}
 
           {/* <NavItem>
             <NavLink to="/">Blog</NavLink>
