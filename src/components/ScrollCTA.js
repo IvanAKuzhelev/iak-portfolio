@@ -46,8 +46,7 @@ const ScrollCTA = ({
           animation: ${bouncing} ${period}s ease infinite;
         }
         @media (min-width: 1600px) {
-          padding-bottom: 32px;
-          background-color: red;
+          padding-bottom: 24px;
           font-size: ${size * 1.4}rem;
         }
       `}
